@@ -39,17 +39,18 @@ function App() {
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
-        <BrowserRouter>
-          <Header datamenu={datamenu} />
+      <BrowserRouter>
+        <Header datamenu={datamenu} />
+        <Suspense fallback={<div>Loading...</div>}>
           <Routes>
             <Route path="/" element={firstEl} />
             <Route path="/dummyTable" element={<DummyTable />} />
             <Route path="/dummyChart" element={<DummyChart />} />
             <Route path="/dummyList" element={<DummyList />} />
           </Routes>
-        </BrowserRouter>
-      </Suspense>
+        </Suspense>
+      </BrowserRouter>
+      {/* </Suspense> */}
     </>
   );
 }
